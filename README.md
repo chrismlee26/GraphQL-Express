@@ -3,13 +3,13 @@
 - For FEW2.9 (Query Languages)
 - GraphQL API over a Public API
 - Built with GraphQL and Express
-- Defined Resolvers and Types
+- Define Resolvers and Types
 - Resolvers to handle queries
 
 #### Run Server
 
 ```
-npm start
+$ npm start
 ```
 
 #### Open GraphQL
