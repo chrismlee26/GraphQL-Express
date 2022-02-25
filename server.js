@@ -26,6 +26,8 @@ type Weather {
   temp_max: Float
   pressure: Float
   humidity: Float
+  cod: Int!
+  message: String
 }
 
 type Query {
