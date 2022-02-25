@@ -48,9 +48,17 @@ const root = {
     const temp_max = json.main.temp_max
     const pressure = json.main.pressure
     const humidity = json.main.humidity
-    // const cod = 
-    // const message = 
-    return { temperature, description, feels_like, temp_min, temp_max, pressure, humidity }
+    const cod = parseInt(json.cod)
+    const message = json.message
+
+    if (json.cod !== 200) {
+      return {
+        cod: json.cod,
+        message: json.message,
+      }
+    }
+
+    return { temperature, description, feels_like, temp_min, temp_max, pressure, humidity, cod, message }
   }
 }
 
