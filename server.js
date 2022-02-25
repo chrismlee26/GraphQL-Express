@@ -4,6 +4,7 @@ const { graphqlHTTP } = require('express-graphql')
 const { buildSchema } = require('graphql')
 require('dotenv').config()
 const fetch = require('node-fetch')
+const cors = require('cors')
 
 // Create a schema
 const schema = buildSchema(`
@@ -47,12 +48,15 @@ const root = {
     const temp_max = json.main.temp_max
     const pressure = json.main.pressure
     const humidity = json.main.humidity
+    // const cod = 
+    // const message = 
     return { temperature, description, feels_like, temp_min, temp_max, pressure, humidity }
   }
 }
 
 // Create an express app
 const app = express()
+app.use(cors())
 
 // Define a route for GraphQL
 app.use('/graphql', graphqlHTTP({
